@@ -392,18 +392,18 @@ if __name__ == "__main__":
 
                 if Configuration == "manual":
                     df_imp_vol = manual_newton_method()
-                    print(f"Implied volatility is: {df_imp_vol.implied_vol[0]}")
+                    print(f"Implied volatility is: {np.round(df_imp_vol.implied_vol[0],4)}")
 
                 if Configuration == "market":
                     asset_type = (str(input("Select type of asset \n- 'Equity' \n- 'Index' \n- 'Crypto'\nEnter Choice: "))).title()
                     
                     if asset_type.title() in ["Equity","Index"]:
                         df_market_eq = eq_ind_market_newton_method()
-                        print(f"Implied volatility is: {df_market_eq.implied_vol[0]}")
+                        print(f"Implied volatility is: {np.round(df_market_eq.implied_vol[0],4)}")
 
                     if asset_type == "Crypto":
                         df_market_crypto = crypto_market_newton_method()
-                        print(f"Implied volatility is: {df_market_crypto.implied_vol[0]}")
+                        print(f"Implied volatility is: {np.round(df_market_crypto.implied_vol[0],4)}")
 
             if action_type == 2:
                 asset_type = (str(input("Select type of asset \n- 'Equity' \n- 'Index' \n- 'Crypto'\nEnter Choice: "))).title()
