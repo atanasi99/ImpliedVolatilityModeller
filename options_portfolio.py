@@ -1,3 +1,4 @@
+#Project Code
 #Author: Atanasije Lalkov
 # ---------------------------------------------------------------------
 #Description: Creating a portfolio for options connected to MySQL database

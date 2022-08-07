@@ -58,12 +58,36 @@ Using this command will execute the program and allow the user to interact in th
 On the main menu:
 
 - entering "1" - provide a computation of implied volatility for specified option either manual configuration or using market data
-
 - entering "2" - provide computation of volatility smile
 - entering "3" - provide computation of volatility surface
 - entering "4" - provide computation of fitted volatility analytics
 - entering "5" - enter option portfolio (this requires having MySQL setup on device)
 - entering "6" - exit program 
+
+### Additional configurations 
+
+For access to allowing an intermediate to store data in a MySQL database. A requirement is to install MySQL to the machine and creating a specific table for storing options. The username, password, database and table name should follow convention:
+
+username = 'root'
+password = 'Implied1#'
+db name = 'option_portfolio'
+table name = 'options_table'
+
+In MySQL, table should be created with the following columns:
+
+Columns:
+- option_id int PK 
+- option_type char(4) 
+- option_ticker char(15) 
+- option_price float 
+- TTM float 
+- strike_price float 
+- spot_price float 
+- risk_free_rate float 
+- delta_value float 
+- implied_vol float
+
+Implementing these configs would allow the additional feature to storing portfolio of options
 
 ### Troubleshooting
 
